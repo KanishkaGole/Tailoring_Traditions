@@ -1,6 +1,5 @@
 ## Luxury Tailoring Boutique & Designer Studio, Thane
 
-![Showcase](images/CoverCollage_1653073063976.jpg)
 
 ---
 
