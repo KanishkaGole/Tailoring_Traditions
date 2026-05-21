@@ -1,102 +1,89 @@
-# Tailoring Traditions
 ## Luxury Tailoring Boutique & Designer Studio, Thane
 
-![Tailoring Traditions](images/)
+![Showcase](images/CoverCollage_1653073063976.jpg)
 
 ---
 
-## 📖 About the Project
+## Table of Contents
 
-**Tailoring Traditions** is a premier women-owned luxury tailoring and designer studio based in Thane, Maharashtra. We specialize in creating bespoke garments that celebrate traditional craftsmanship with contemporary elegance.
-
-### Our Specialty Services
-
-- **Luxury Tailoring**: Custom-fitted garments crafted with meticulous attention to detail
-- **Bespoke Blouses**: Intricate designer blouses tailored to your specifications
-- **Bridal Couture**: Exquisite bridal wear for your special day
-- **Traditional Sarees**: Curated collection of premium sarees
-- **Styling Guidance**: Professional consultation to help you find your perfect look
-- **Custom Dresses**: Personalized designs that reflect your unique style
+- About
+- Features
+- Gallery (sample)
+- How to view
+- Contributors
+- Contact
 
 ---
 
-## 🎯 Project Description
+## About
 
-This is the official digital presence of Tailoring Traditions, showcasing our portfolio, services, and craftsmanship. The website is built with modern web technologies while maintaining an elegant aesthetic that reflects our commitment to luxury and tradition.
+Tailoring Traditions is a luxury women-owned tailoring and designer studio based in Thane. We create bespoke garments that blend traditional craftsmanship with contemporary design.
 
-### Key Features
+### Specialty Services
 
-- **Responsive Design**: Beautiful interface across all devices
-- **Elegant Aesthetics**: Luxurious color palette with gold, emerald, and ivory tones
-- **Gallery Showcase**: Comprehensive portfolio of our creations
-- **User-Friendly Navigation**: Intuitive interface for easy browsing
-
----
-
-## 🎨 Design & Technology
-
-- **Frontend**: HTML5, CSS3
-- **Design System**: Luxury-focused color palette with premium typography
-- **Fonts**: 
-  - Cormorant Garamond (Serif) - for elegant headings
-  - Jost (Sans-serif) - for clean, modern body text
+- Luxury tailoring and custom-fitted garments
+- Bespoke designer blouses and bridal couture
+- Traditional saree styling and alterations
+- Personalized consultations and styling guidance
 
 ---
 
-## 📸 Gallery
+## Key Features
 
-The project features an extensive collection of high-resolution images showcasing our tailoring work and designer creations.
-
----
-
-## 👥 Contributors & Team
-
-### Kanishka Gole
-- **Email**: [knishkag2020@gmail.com](mailto:knishkag2020@gmail.com)
-- **GitHub**: [@KanishkaGole](https://github.com/KanishkaGole)
-
-
-### Shivank Gole
-- **Email**: [shivanktuition@gmail.com](mailto:shivanktuition@gmail.com)
-
+- Responsive, lightweight HTML/CSS site
+- Elegant, luxury-oriented visual design
+- Gallery showcasing tailoring and finished pieces
 
 ---
 
-## 🚀 Getting Started
+## Gallery (sample)
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/KanishkaGole/Tailoring_Traditions.git
-   ```
+Below are a few representative images from the `images/` folder. See the `images/` directory for the full collection.
 
-2. Navigate to the project directory:
-   ```bash
-   cd Tailoring_Traditions
-   ```
-
-3. Open `Tailoring_Traditions.html` in your web browser to view the website
+![Cover Collage](images/CoverCollage_1653073063976.jpg)
+![Bridal Sample](images/IMG-20230127-WA0013.jpg)
+![Detail Shot](images/WIN_20230814_07_46_31_Pro.jpg)
+![Studio Work](images/IMG-20230928-WA0024.jpg)
 
 ---
 
-## 📧 Contact Us
+## How to view locally
 
-For inquiries about our services, custom orders, or collaborations:
+1. Open the project folder in your browser or a local server.
+2. Open `Tailoring_Traditions.html` in your web browser to view the site.
 
-- **Email**: [knishkag2020@gmail.com](mailto:knishkag2020@gmail.com)
-- **GitHub**: [@KanishkaGole](https://github.com/KanishkaGole)
+For a quick local server (Python 3):
 
----
-
-## 📄 License
-
-This project is maintained by Tailoring Traditions. All content, images, and designs are the intellectual property of Tailoring Traditions.
-
----
-
-## ✨ Acknowledgments
-
-Special thanks to all our clients, collaborators, and supporters who have made Tailoring Traditions possible. Your trust in our craft drives our commitment to excellence.
+```bash
+python -m http.server 8000
+# then open http://localhost:8000/Tailoring_Traditions.html
+```
 
 ---
 
-**Made with ❤️ by the Tailoring Traditions Team**
+## Contributors
+
+- Kanishka Gole — knishkag2020@gmail.com — https://github.com/KanishkaGole
+- Shivank Gole — shivanktuition@gmail.com
+
+If you'd like to contribute updates to the README only, open a PR or contact the maintainers above.
+
+---
+
+## Contact
+
+For inquiries, custom orders, or collaborations:
+
+- Email: knishkag2020@gmail.com
+- GitHub: https://github.com/KanishkaGole
+
+---
+
+## Notes
+
+- No project source files were modified — only the README was added/updated.
+- Images referenced are included in the `images/` folder.
+
+---
+
+Made with ❤️ by the Tailoring Traditions team
