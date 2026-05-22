@@ -3710,6 +3710,1150 @@
         // Check every 30 seconds
         setInterval(updateLiveBoutiqueStatus, 30000);
     </script>
+
+    <!-- ═══════════════════════════════════════════════════════
+         LUXURY CHATBOT WIDGET — ARIA by Tailoring Traditions
+         ═══════════════════════════════════════════════════════ -->
+
+    <!-- Chat Bubble Trigger -->
+    <div class="tt-chat-launcher" id="ttChatLauncher" aria-label="Open Aria — Tailoring Traditions Concierge">
+        <div class="tt-chat-launcher-inner">
+            <div class="tt-chat-launcher-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2C6.48 2 2 6.02 2 11c0 2.65 1.18 5.04 3.08 6.74L4 22l4.51-1.5C9.6 20.83 10.78 21 12 21c5.52 0 10-4.02 10-9S17.52 2 12 2z" fill="currentColor"/>
+                    <circle cx="8.5" cy="11" r="1.2" fill="white" opacity="0.85"/>
+                    <circle cx="12" cy="11" r="1.2" fill="white" opacity="0.85"/>
+                    <circle cx="15.5" cy="11" r="1.2" fill="white" opacity="0.85"/>
+                </svg>
+            </div>
+            <span class="tt-chat-launcher-label">Chat with Aria</span>
+        </div>
+        <div class="tt-chat-launcher-pulse"></div>
+        <div class="tt-chat-unread-dot" id="ttUnreadDot"></div>
+    </div>
+
+    <!-- Chat Widget Panel -->
+    <div class="tt-chat-panel" id="ttChatPanel" aria-hidden="true">
+
+        <!-- Header -->
+        <div class="tt-chat-header">
+            <div class="tt-chat-header-brand">
+                <div class="tt-chat-avatar">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 2C6.48 2 2 6.02 2 11c0 2.65 1.18 5.04 3.08 6.74L4 22l4.51-1.5C9.6 20.83 10.78 21 12 21c5.52 0 10-4.02 10-9S17.52 2 12 2z" fill="currentColor"/>
+                    </svg>
+                </div>
+                <div class="tt-chat-header-info">
+                    <h3 class="tt-chat-name">Aria <span class="tt-chat-verified">✦</span></h3>
+                    <p class="tt-chat-subtitle">Tailoring Traditions Concierge</p>
+                    <div class="tt-chat-status-row">
+                        <span class="tt-live-dot" id="ttLiveDot"></span>
+                        <span class="tt-live-text" id="ttLiveText">Checking hours...</span>
+                    </div>
+                </div>
+            </div>
+            <div class="tt-chat-header-actions">
+                <button class="tt-header-btn" id="ttMinimizeBtn" aria-label="Minimize chat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                    </svg>
+                </button>
+                <button class="tt-header-btn tt-close-btn" id="ttCloseBtn" aria-label="Close chat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Shimmer Header Divider -->
+        <div class="tt-chat-shimmer-line"></div>
+
+        <!-- Messages -->
+        <div class="tt-chat-messages" id="ttChatMessages"></div>
+
+        <!-- Quick Replies -->
+        <div class="tt-quick-replies" id="ttQuickReplies">
+            <button class="tt-chip" data-action="appointment">📅 Book Appointment</button>
+            <button class="tt-chip" data-action="pricing">💎 Pricing</button>
+            <button class="tt-chip" data-action="location">📍 Store Location</button>
+            <button class="tt-chip" data-action="whatsapp">💬 WhatsApp Us</button>
+            <button class="tt-chip" data-action="bridal">👰 Bridal Consultation</button>
+            <button class="tt-chip" data-action="delivery">🚚 Delivery Time</button>
+        </div>
+
+        <!-- Input Footer -->
+        <div class="tt-chat-footer">
+            <div class="tt-chat-input-wrap">
+                <input
+                    class="tt-chat-input"
+                    id="ttChatInput"
+                    type="text"
+                    placeholder="Ask about stitching, pricing, timings…"
+                    autocomplete="off"
+                    maxlength="280"
+                />
+                <button class="tt-send-btn" id="ttSendBtn" aria-label="Send message">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                        <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="tt-chat-footer-bar">
+                <a class="tt-footer-action" href="https://wa.me/918657555419" target="_blank" aria-label="WhatsApp">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    WhatsApp
+                </a>
+                <a class="tt-footer-action" href="tel:+918657555419" aria-label="Call">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 012 2.22 2 2 0 014 .04h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                    Call
+                </a>
+                <a class="tt-footer-action" href="https://www.instagram.com/tailoringtraditions/" target="_blank" aria-label="Instagram">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+                    Instagram
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── Chatbot Styles ── -->
+    <style>
+        /* ═══ Base Variables ═══ */
+        :root {
+            --tt-gold: #C5A880;
+            --tt-gold-dark: #9E8259;
+            --tt-gold-light: #D5BE9E;
+            --tt-cream: #FDFBF7;
+            --tt-ivory: #F4EFE4;
+            --tt-silk: #EAE3D2;
+            --tt-ink: #1A1510;
+            --tt-ink-mid: #3D3228;
+            --tt-ink-muted: #7A6A55;
+            --tt-emerald: #0F2E22;
+            --tt-white: #FFFFFF;
+            --tt-panel-bg: rgba(253, 251, 247, 0.96);
+            --tt-glass: rgba(253, 251, 247, 0.85);
+            --tt-shadow: 0 32px 80px rgba(26, 21, 16, 0.18), 0 8px 24px rgba(197, 168, 128, 0.12);
+            --tt-border: rgba(197, 168, 128, 0.25);
+            --tt-radius: 20px;
+            --tt-ease: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* ═══ Launcher Bubble ═══ */
+        .tt-chat-launcher {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 9800;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: transform 0.4s var(--tt-ease);
+        }
+
+        .tt-chat-launcher:hover {
+            transform: translateY(-4px) scale(1.02);
+        }
+
+        .tt-chat-launcher-inner {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--tt-ink) 0%, var(--tt-ink-mid) 60%, #2c2118 100%);
+            color: var(--tt-gold-light);
+            padding: 14px 22px 14px 18px;
+            border-radius: 50px;
+            box-shadow: 0 12px 40px rgba(26, 21, 16, 0.35), 0 3px 12px rgba(197, 168, 128, 0.15), inset 0 1px 0 rgba(197, 168, 128, 0.12);
+            border: 1px solid rgba(197, 168, 128, 0.2);
+            font-family: 'Jost', sans-serif;
+            user-select: none;
+        }
+
+        .tt-chat-launcher-icon {
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, var(--tt-gold) 0%, var(--tt-gold-dark) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--tt-white);
+            flex-shrink: 0;
+        }
+
+        .tt-chat-launcher-label {
+            font-size: 0.8rem;
+            letter-spacing: 0.08em;
+            font-weight: 400;
+            white-space: nowrap;
+        }
+
+        .tt-chat-launcher-pulse {
+            position: absolute;
+            inset: 0;
+            border-radius: 50px;
+            background: linear-gradient(135deg, var(--tt-gold) 0%, var(--tt-gold-dark) 100%);
+            opacity: 0;
+            animation: ttPulseRing 3s ease-out infinite;
+            z-index: -1;
+        }
+
+        @keyframes ttPulseRing {
+            0% { transform: scale(1); opacity: 0.35; }
+            70% { transform: scale(1.12); opacity: 0; }
+            100% { transform: scale(1.12); opacity: 0; }
+        }
+
+        .tt-chat-unread-dot {
+            position: absolute;
+            top: -3px;
+            right: -3px;
+            width: 13px;
+            height: 13px;
+            background: linear-gradient(135deg, #e8a44a, var(--tt-gold));
+            border-radius: 50%;
+            border: 2px solid var(--tt-white);
+            display: none;
+            animation: ttBounce 1.2s ease-in-out infinite;
+        }
+
+        @keyframes ttBounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.25); }
+        }
+
+        /* launcher hidden when panel open */
+        .tt-chat-launcher.hidden {
+            transform: scale(0) translateY(20px);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* ═══ Chat Panel ═══ */
+        .tt-chat-panel {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            width: 390px;
+            max-height: 620px;
+            display: flex;
+            flex-direction: column;
+            background: var(--tt-panel-bg);
+            backdrop-filter: blur(24px) saturate(1.4);
+            -webkit-backdrop-filter: blur(24px) saturate(1.4);
+            border: 1px solid var(--tt-border);
+            border-radius: var(--tt-radius);
+            box-shadow: var(--tt-shadow);
+            z-index: 9900;
+            overflow: hidden;
+            font-family: 'Jost', sans-serif;
+            transform: scale(0.88) translateY(30px);
+            opacity: 0;
+            pointer-events: none;
+            transition: transform 0.5s var(--tt-ease), opacity 0.4s ease;
+            transform-origin: bottom right;
+        }
+
+        .tt-chat-panel.open {
+            transform: scale(1) translateY(0);
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        /* minimized state */
+        .tt-chat-panel.minimized {
+            max-height: 68px;
+        }
+
+        .tt-chat-panel.minimized .tt-chat-messages,
+        .tt-chat-panel.minimized .tt-quick-replies,
+        .tt-chat-panel.minimized .tt-chat-footer,
+        .tt-chat-panel.minimized .tt-chat-shimmer-line {
+            display: none;
+        }
+
+        /* ═══ Header ═══ */
+        .tt-chat-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 18px 14px;
+            background: linear-gradient(135deg, var(--tt-ink) 0%, var(--tt-ink-mid) 100%);
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .tt-chat-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--tt-gold-light), transparent);
+            opacity: 0.4;
+        }
+
+        .tt-chat-header-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .tt-chat-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--tt-gold) 0%, var(--tt-gold-dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--tt-white);
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(197, 168, 128, 0.35);
+            position: relative;
+        }
+
+        .tt-chat-avatar::after {
+            content: '';
+            position: absolute;
+            bottom: 1px; right: 1px;
+            width: 9px; height: 9px;
+            background: #4ade80;
+            border-radius: 50%;
+            border: 2px solid var(--tt-ink);
+        }
+
+        .tt-chat-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: var(--tt-cream);
+            line-height: 1;
+            letter-spacing: 0.04em;
+        }
+
+        .tt-chat-verified {
+            color: var(--tt-gold-light);
+            font-size: 0.7rem;
+        }
+
+        .tt-chat-subtitle {
+            font-size: 0.62rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: rgba(213, 190, 158, 0.65);
+            margin-top: 3px;
+            font-weight: 400;
+        }
+
+        .tt-chat-status-row {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 4px;
+        }
+
+        .tt-live-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #94a3b8;
+            flex-shrink: 0;
+            transition: background 0.4s ease;
+        }
+
+        .tt-live-dot.is-open {
+            background: #4ade80;
+            box-shadow: 0 0 6px rgba(74, 222, 128, 0.6);
+            animation: ttLivePulse 2s infinite;
+        }
+
+        .tt-live-dot.is-closed { background: #f87171; }
+
+        @keyframes ttLivePulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .tt-live-text {
+            font-size: 0.6rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(213, 190, 158, 0.7);
+            font-weight: 400;
+        }
+
+        .tt-chat-header-actions {
+            display: flex;
+            gap: 6px;
+        }
+
+        .tt-header-btn {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 1px solid rgba(197, 168, 128, 0.2);
+            background: rgba(197, 168, 128, 0.08);
+            color: rgba(213, 190, 158, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .tt-header-btn:hover {
+            background: rgba(197, 168, 128, 0.18);
+            color: var(--tt-gold-light);
+        }
+
+        .tt-close-btn:hover {
+            background: rgba(248, 113, 113, 0.15);
+            border-color: rgba(248, 113, 113, 0.3);
+            color: #fca5a5;
+        }
+
+        /* ═══ Shimmer Line ═══ */
+        .tt-chat-shimmer-line {
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, var(--tt-gold-light) 40%, var(--tt-gold) 60%, transparent 100%);
+            background-size: 200% 100%;
+            animation: ttShimmer 2.5s ease-in-out infinite;
+            flex-shrink: 0;
+        }
+
+        @keyframes ttShimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+
+        /* ═══ Messages Area ═══ */
+        .tt-chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 18px 16px 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            scroll-behavior: smooth;
+        }
+
+        .tt-chat-messages::-webkit-scrollbar { width: 4px; }
+        .tt-chat-messages::-webkit-scrollbar-track { background: transparent; }
+        .tt-chat-messages::-webkit-scrollbar-thumb {
+            background: var(--tt-silk);
+            border-radius: 4px;
+        }
+
+        /* ── Message Bubbles ── */
+        .tt-msg {
+            display: flex;
+            align-items: flex-end;
+            gap: 8px;
+            animation: ttMsgIn 0.4s var(--tt-ease) both;
+            max-width: 100%;
+        }
+
+        @keyframes ttMsgIn {
+            from { opacity: 0; transform: translateY(12px) scale(0.97); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .tt-msg.bot { align-self: flex-start; }
+        .tt-msg.user { align-self: flex-end; flex-direction: row-reverse; }
+
+        .tt-msg-avatar {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--tt-gold) 0%, var(--tt-gold-dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--tt-white);
+            font-size: 0.65rem;
+            flex-shrink: 0;
+            box-shadow: 0 3px 8px rgba(197, 168, 128, 0.3);
+        }
+
+        .tt-bubble {
+            padding: 12px 16px;
+            border-radius: 18px;
+            font-size: 0.87rem;
+            line-height: 1.65;
+            font-weight: 300;
+            max-width: 82%;
+            word-break: break-word;
+        }
+
+        .tt-msg.bot .tt-bubble {
+            background: var(--tt-ivory);
+            color: var(--tt-ink-mid);
+            border: 1px solid var(--tt-silk);
+            border-bottom-left-radius: 6px;
+        }
+
+        .tt-msg.user .tt-bubble {
+            background: linear-gradient(135deg, var(--tt-ink) 0%, var(--tt-ink-mid) 100%);
+            color: var(--tt-gold-light);
+            border-bottom-right-radius: 6px;
+        }
+
+        .tt-bubble strong { color: var(--tt-gold-dark); font-weight: 500; }
+        .tt-bubble em { font-style: italic; }
+        .tt-bubble a {
+            color: var(--tt-gold-dark);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+        .tt-bubble a:hover { color: var(--tt-ink); }
+
+        /* Map preview inside bubble */
+        .tt-map-preview {
+            margin-top: 10px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--tt-silk);
+        }
+
+        .tt-map-preview iframe {
+            width: 100%;
+            height: 130px;
+            border: 0;
+            display: block;
+        }
+
+        .tt-map-cta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 8px 12px;
+            background: var(--tt-white);
+            border-top: 1px solid var(--tt-silk);
+            font-size: 0.72rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--tt-gold-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .tt-map-cta:hover {
+            background: var(--tt-ivory);
+            color: var(--tt-ink);
+        }
+
+        /* ── Timestamp ── */
+        .tt-timestamp {
+            font-size: 0.6rem;
+            color: var(--tt-ink-muted);
+            text-align: center;
+            letter-spacing: 0.06em;
+            opacity: 0.6;
+            margin: -4px 0;
+        }
+
+        /* ── Typing Indicator ── */
+        .tt-typing-bubble {
+            display: flex;
+            align-items: flex-end;
+            gap: 8px;
+            animation: ttMsgIn 0.3s var(--tt-ease) both;
+        }
+
+        .tt-typing-dots {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 12px 16px;
+            background: var(--tt-ivory);
+            border: 1px solid var(--tt-silk);
+            border-radius: 18px;
+            border-bottom-left-radius: 6px;
+        }
+
+        .tt-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--tt-gold);
+            animation: ttTypingDot 1.4s ease-in-out infinite;
+        }
+
+        .tt-dot:nth-child(2) { animation-delay: 0.2s; }
+        .tt-dot:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes ttTypingDot {
+            0%, 80%, 100% { transform: scale(0.7); opacity: 0.5; }
+            40% { transform: scale(1); opacity: 1; }
+        }
+
+        /* ═══ Quick Reply Chips ═══ */
+        .tt-quick-replies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            padding: 8px 16px 10px;
+            border-top: 1px solid var(--tt-silk);
+            background: rgba(249, 245, 238, 0.5);
+            flex-shrink: 0;
+        }
+
+        .tt-chip {
+            background: var(--tt-white);
+            border: 1px solid var(--tt-silk);
+            color: var(--tt-ink-mid);
+            font-family: 'Jost', sans-serif;
+            font-size: 0.72rem;
+            letter-spacing: 0.05em;
+            padding: 6px 13px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            white-space: nowrap;
+            font-weight: 400;
+        }
+
+        .tt-chip:hover {
+            background: var(--tt-gold);
+            border-color: var(--tt-gold);
+            color: var(--tt-white);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(197, 168, 128, 0.25);
+        }
+
+        /* ═══ Footer Input ═══ */
+        .tt-chat-footer {
+            border-top: 1px solid var(--tt-silk);
+            padding: 12px 14px 10px;
+            flex-shrink: 0;
+            background: var(--tt-cream);
+        }
+
+        .tt-chat-input-wrap {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--tt-white);
+            border: 1px solid var(--tt-silk);
+            border-radius: 50px;
+            padding: 6px 8px 6px 16px;
+            transition: border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .tt-chat-input-wrap:focus-within {
+            border-color: var(--tt-gold-light);
+            box-shadow: 0 0 0 3px rgba(197, 168, 128, 0.12);
+        }
+
+        .tt-chat-input {
+            flex: 1;
+            border: none;
+            outline: none;
+            background: transparent;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.85rem;
+            color: var(--tt-ink);
+            font-weight: 300;
+        }
+
+        .tt-chat-input::placeholder {
+            color: var(--tt-ink-muted);
+            opacity: 0.7;
+        }
+
+        .tt-send-btn {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--tt-gold) 0%, var(--tt-gold-dark) 100%);
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--tt-white);
+            cursor: pointer;
+            flex-shrink: 0;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 10px rgba(197, 168, 128, 0.3);
+        }
+
+        .tt-send-btn:hover {
+            transform: scale(1.08);
+            box-shadow: 0 6px 16px rgba(197, 168, 128, 0.4);
+        }
+
+        /* ── Footer action row ── */
+        .tt-chat-footer-bar {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 9px;
+        }
+
+        .tt-footer-action {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--tt-ink-muted);
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.25s ease;
+        }
+
+        .tt-footer-action:hover { color: var(--tt-gold-dark); }
+
+        /* ═══ Mobile ═══ */
+        @media (max-width: 480px) {
+            .tt-chat-panel {
+                bottom: 0;
+                right: 0;
+                left: 0;
+                width: 100%;
+                max-height: 88vh;
+                border-radius: 24px 24px 0 0;
+                transform-origin: bottom center;
+            }
+
+            .tt-chat-launcher {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .tt-chat-launcher-label {
+                display: none;
+            }
+
+            .tt-chat-launcher-inner {
+                padding: 14px;
+                border-radius: 50%;
+            }
+        }
+
+        /* ═══ Premium Ornament Animation ═══ */
+        .tt-ornament {
+            display: inline-block;
+            color: var(--tt-gold);
+            font-size: 0.8rem;
+            animation: ttOrnamentSpin 8s linear infinite;
+        }
+
+        @keyframes ttOrnamentSpin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+
+    <!-- ── Chatbot Script ── -->
+    <script>
+    (function() {
+        'use strict';
+
+        /* ═══ Config ═══ */
+        const BOUTIQUE = {
+            name: 'Tailoring Traditions',
+            phone: '+91 86575 55419',
+            phoneRaw: '918657555419',
+            instagram: 'https://www.instagram.com/tailoringtraditions/',
+            address: 'Shop No. 5, First Floor, Asteria High Street Shopping Complex, Pokharan Road No. 2, Opp. Bethany Hospital, Pawar Nagar, Thane West, Maharashtra 400610',
+            mapEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d471.7!2d72.9638!3d19.2109!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDEyJzM5LjIiTiA3MsKwNTcnNTAuNiJF!5e0!3m2!1sen!2sin!4v1716300000000',
+            mapsLink: 'https://maps.google.com/?q=Asteria+High+Street+Pokharan+Road+Thane+West',
+            openTime: 11 * 60,      // 11:00 AM
+            closeTime: 20 * 60 + 30 // 8:30 PM
+        };
+
+        const STORAGE_KEY = 'tt_aria_chat_v2';
+
+        /* ═══ FAQ Engine ═══ */
+        const FAQ = [
+            {
+                keywords: ['hello','hi','hey','hiya','namaste','good morning','good evening','good afternoon','start','help'],
+                reply: () => `<strong>Namaste!</strong> ✨ I'm <em>Aria</em>, your personal concierge at Tailoring Traditions.\n\nHow may I assist you today? Whether it's a bridal ensemble, custom blouse, or a quick alteration — I'm here to guide you beautifully.`
+            },
+            {
+                keywords: ['appointment','book','consultation','slot','schedule','visit','meet'],
+                reply: () => `We'd love to welcome you to our atelier. 💛\n\n<strong>To book a consultation:</strong>\n• WhatsApp us at <a href="https://wa.me/${BOUTIQUE.phoneRaw}" target="_blank">+91 86575 55419</a>\n• Or call us directly and we'll find the perfect slot for you.\n\nOur boutique is open <strong>Tuesday – Sunday, 11 AM – 8:30 PM</strong>. Monday we rest so we can serve you better the rest of the week.`
+            },
+            {
+                keywords: ['price','pricing','cost','rate','charges','how much','rupee','rs','inr','fee','affordable'],
+                reply: () => `At Tailoring Traditions, every garment is a conversation — not a catalogue item. 💎\n\nPricing varies based on:\n• <strong>Fabric type</strong> (silk, cotton, chiffon, etc.)\n• <strong>Embroidery & embellishment</strong> complexity\n• <strong>Customisation</strong> depth and finishing\n\nWe'd love to understand your design vision and guide you personally — with honesty and care. Reach us on <a href="https://wa.me/${BOUTIQUE.phoneRaw}" target="_blank">WhatsApp</a> or visit us for a free initial consultation. 🌸`
+            },
+            {
+                keywords: ['location','address','where','directions','find','reach','map','get here'],
+                reply: () => `map_preview`
+            },
+            {
+                keywords: ['timing','time','hours','open','close','closed','when','holiday','monday','tuesday','wednesday','sunday'],
+                reply: () => {
+                    const s = getBoutiqueStatus();
+                    return `<strong>${s.label}</strong>\n\n🕐 <strong>Store Hours:</strong>\n• Tuesday – Sunday: 11:00 AM – 8:30 PM\n• Monday: Closed 🔒\n\nWalk-ins are welcome, though we recommend calling ahead for bridal or detailed consultations. 🌸`
+                }
+            },
+            {
+                keywords: ['whatsapp','wa','message','chat','ping','contact'],
+                reply: () => `You can reach us directly on WhatsApp — we typically respond within a few hours. 💬\n\n👉 <a href="https://wa.me/${BOUTIQUE.phoneRaw}" target="_blank"><strong>Open WhatsApp →</strong></a>\n\nSend us your design ideas, reference images, or any queries. We're here to help.`
+            },
+            {
+                keywords: ['call','phone','number','telephone','ring','dial'],
+                reply: () => `You can reach our boutique directly at:\n\n📞 <a href="tel:${BOUTIQUE.phone}"><strong>${BOUTIQUE.phone}</strong></a>\n\nWe're available Tuesday – Sunday, 11 AM to 8:30 PM. For quick queries, WhatsApp works beautifully too! 🌸`
+            },
+            {
+                keywords: ['instagram','insta','social media','photos','portfolio','designs','pictures','gallery'],
+                reply: () => `Our Instagram is a window into our craft — from bridal couture to everyday elegance. ✨\n\n👀 <a href="${BOUTIQUE.instagram}" target="_blank"><strong>@tailoringtraditions →</strong></a>\n\nDo save the designs that speak to you and bring them along — we love working from visual inspiration! 💛`
+            },
+            {
+                keywords: ['blouse','blouses','bespoke blouse','designer blouse','custom blouse','neck','neckline','sleeve','back design','embroidery blouse'],
+                reply: () => `Our bespoke blouse work is truly our signature. 🪡\n\nWe specialise in:\n• <strong>Designer necklines</strong> (square, V, sweetheart, high neck & more)\n• <strong>Padded & structured fits</strong> for confidence and comfort\n• <strong>Custom embroidery</strong> and thread detailing\n• <strong>Sheer, net & mirror work</strong> backs\n\nEvery blouse takes 7–12 days typically. WhatsApp us with your saree to get started! 💎`
+            },
+            {
+                keywords: ['saree','sari','draping','pleating','fall','pico','border'],
+                reply: () => `Saree care and styling is close to our heart. 🌺\n\nWe offer:\n• <strong>Fall & Pico</strong> stitching with precision\n• <strong>Saree blouse</strong> customisation to match your drape\n• Alterations to <strong>border and pleating</strong> zones\n• Full saree <strong>styling consultations</strong>\n\nBring your saree in and we'll guide you through every detail. 💛`
+            },
+            {
+                keywords: ['bridal','wedding','bride','dulhan','lehenga','wedding outfit','bridal blouse','wedding dress','engagement'],
+                reply: () => `Your bridal journey deserves the care of someone who truly <em>listens</em>. 👰✨\n\nAt Tailoring Traditions, bridal consultations are intimate, unhurried experiences. We help you design:\n• <strong>Bridal lehengas & blouses</strong>\n• <strong>Reception & trousseau</strong> ensembles\n• <strong>Matching salwar sets</strong> for the wedding party\n\nWe work from mood boards, reference images, and your personal vision. <a href="https://wa.me/${BOUTIQUE.phoneRaw}" target="_blank"><strong>Book your bridal consultation →</strong></a>`
+            },
+            {
+                keywords: ['alteration','alter','adjust','fix','resize','repair','refit','too tight','too loose','shorten'],
+                reply: () => `Precision alterations are one of our core strengths. ✂️\n\n Whether it's a minor fit adjustment or a full restyling of a cherished heirloom, we ensure every garment leaves perfectly. \n\n<strong>Typical turnaround:</strong> 3–7 working days depending on complexity. WhatsApp us a quick photo for an estimate! 💛`
+            },
+            {
+                keywords: ['salwar','kameez','suit','kurta','anarkali','sharara','palazzo','churidar'],
+                reply: () => `We create exquisite custom salwar suits and kurta sets tailored precisely to your measurements and silhouette preferences. 🌸\n\n• <strong>Anarkali, A-line, straight & fusion cuts</strong>\n• Custom <strong>kali & kameez</strong> stitching\n• Coordinated <strong>dupatta hemming & fall</strong>\n\nShare your fabric and reference image with us on <a href="https://wa.me/${BOUTIQUE.phoneRaw}" target="_blank">WhatsApp</a> to begin. 💎`
+            },
+            {
+                keywords: ['delivery','timeline','time','days','ready','when will','how long','urgent','rush'],
+                reply: () => `Our standard delivery timelines:\n\n• <strong>Blouses & basic stitching:</strong> 7–12 working days\n• <strong>Custom dresses & suits:</strong> 10–18 working days\n• <strong>Bridal & embroidery work:</strong> 3–6 weeks (based on complexity)\n• <strong>Alterations:</strong> 3–7 working days\n\n⚡ Rush orders may be accommodated based on current workload — do reach out on <a href="https://wa.me/${BOUTIQUE.phoneRaw}" target="_blank">WhatsApp</a> for urgent requests. 💛`
+            },
+            {
+                keywords: ['fabric','cloth','silk','cotton','georgette','chiffon','crepe','velvet','brocade','kanjivaram','handloom','banarasi','linen'],
+                reply: () => `Our founder brings deep knowledge of textile behaviour — from the weight of silk to the fall of chiffon. 🧵\n\nWe guide you on:\n• <strong>Fabric selection</strong> for your body type and occasion\n• <strong>Care & draping properties</strong> of various weaves\n• Sourcing suggestions if needed\n\nBring your fabric to us for a free consultation, or tell us about your occasion and we'll suggest what suits you best. 💛`
+            },
+            {
+                keywords: ['dress','gown','western','frock','top','trousers','co-ord','fusion','modern','contemporary'],
+                reply: () => `We bridge the beautiful gap between traditional Indian craftsmanship and modern silhouettes. ✨\n\nOur custom dress services include:\n• <strong>Contemporary fusion</strong> indo-western sets\n• <strong>Custom evening gowns</strong> & formal dresses\n• <strong>Co-ord sets & crop tops</strong> with ethnic prints\n\nShare your reference image and we'll bring it to life beautifully. <a href="https://wa.me/${BOUTIQUE.phoneRaw}" target="_blank">WhatsApp us →</a>`
+            },
+            {
+                keywords: ['lgbtq','inclusive','gender','trans','non-binary','all bodies','size'],
+                reply: () => `Tailoring Traditions is a <strong>proud, inclusive, LGBTQ+ friendly space</strong>. 🌈\n\nEvery body deserves clothing that celebrates them. We create garments for <em>all</em> body types, sizes, and identities — without judgment, with full care and respect. 💛\n\nYou are always welcome here.`
+            },
+            {
+                keywords: ['parking','wheelchair','accessible','restroom','lift'],
+                reply: () => `We're committed to being a welcoming space for everyone:\n\n♿ <strong>Wheelchair-accessible</strong> entrance\n🚗 <strong>Free street parking</strong> available near the complex\n🚻 <strong>Restrooms</strong> available at the shopping complex\n\nLocated at Asteria High Street Shopping Complex — easy to find opposite Bethany Hospital on Pokhran Road. 📍`
+            },
+            {
+                keywords: ['thank','thanks','thank you','appreciated','wonderful','lovely','great','perfect','excellent'],
+                reply: () => `It's truly our pleasure. 💛\n\nAt Tailoring Traditions, every client is treated as a guest in our atelier. We look forward to creating something beautiful for you.\n\n<em>— Aria, Tailoring Traditions Concierge ✦</em>`
+            },
+            {
+                keywords: ['bye','goodbye','see you','ta ta','later','done','that is all','that\'s all'],
+                reply: () => `Thank you for visiting Tailoring Traditions. 🌸\n\nWe hope to welcome you to our boutique very soon. Until then, feel free to browse our Instagram for inspiration — <a href="${BOUTIQUE.instagram}" target="_blank">@tailoringtraditions</a>.\n\n<em>With warmth, Aria ✦</em>`
+            }
+        ];
+
+        const FALLBACK_REPLIES = [
+            `That's a wonderful question. For the most personalised guidance, I'd recommend reaching out to our boutique directly. 💛\n\n📞 <a href="tel:${BOUTIQUE.phone}">${BOUTIQUE.phone}</a>\n💬 <a href="https://wa.me/${BOUTIQUE.phoneRaw}" target="_blank">WhatsApp Us</a>`,
+            `I'd love to help you further with that. Our team at Tailoring Traditions would be happy to assist — please feel free to <a href="https://wa.me/${BOUTIQUE.phoneRaw}" target="_blank">WhatsApp us</a> for a personalised response. 🌸`,
+            `Each garment tells a story, and yours deserves the best guidance. 💎\n\nFor detailed queries, our boutique team is just a message away — <a href="https://wa.me/${BOUTIQUE.phoneRaw}" target="_blank">WhatsApp →</a>`
+        ];
+
+        /* ═══ Helpers ═══ */
+        function getBoutiqueStatus() {
+            const now = new Date();
+            const day = now.getDay();
+            const mins = now.getHours() * 60 + now.getMinutes();
+            const open = day !== 1 && mins >= BOUTIQUE.openTime && mins < BOUTIQUE.closeTime;
+            return {
+                open,
+                label: open ? '✦ We\'re Open Now' : '✦ Currently Closed'
+            };
+        }
+
+        function timeNow() {
+            return new Date().toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' });
+        }
+
+        function findResponse(text) {
+            const lower = text.toLowerCase();
+            for (const faq of FAQ) {
+                if (faq.keywords.some(k => lower.includes(k))) {
+                    return faq.reply();
+                }
+            }
+            return FALLBACK_REPLIES[Math.floor(Math.random() * FALLBACK_REPLIES.length)];
+        }
+
+        /* ═══ DOM References ═══ */
+        const launcher = document.getElementById('ttChatLauncher');
+        const panel    = document.getElementById('ttChatPanel');
+        const msgArea  = document.getElementById('ttChatMessages');
+        const input    = document.getElementById('ttChatInput');
+        const sendBtn  = document.getElementById('ttSendBtn');
+        const closeBtn = document.getElementById('ttCloseBtn');
+        const minBtn   = document.getElementById('ttMinimizeBtn');
+        const unreadDot= document.getElementById('ttUnreadDot');
+        const liveDot  = document.getElementById('ttLiveDot');
+        const liveText = document.getElementById('ttLiveText');
+        const quickReplies = document.getElementById('ttQuickReplies');
+
+        /* ═══ State ═══ */
+        let isOpen = false;
+        let isMinimized = false;
+        let greeted = false;
+        let history = [];
+        let greetTimeout = null;
+
+        /* ═══ Local Storage ═══ */
+        function saveHistory() {
+            try {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(history.slice(-40)));
+            } catch(e) {}
+        }
+
+        function loadHistory() {
+            try {
+                const raw = localStorage.getItem(STORAGE_KEY);
+                return raw ? JSON.parse(raw) : [];
+            } catch(e) { return []; }
+        }
+
+        /* ═══ Status Badge ═══ */
+        function updateStatusBadge() {
+            const s = getBoutiqueStatus();
+            liveDot.className = 'tt-live-dot ' + (s.open ? 'is-open' : 'is-closed');
+            liveText.textContent = s.open ? 'Open Now' : 'Closed Today';
+        }
+
+        /* ═══ Render messages ═══ */
+        function renderMessage(role, content, animate = true) {
+            if (content === 'map_preview') {
+                renderMapBubble(animate);
+                return;
+            }
+
+            const wrap = document.createElement('div');
+            wrap.className = `tt-msg ${role}`;
+
+            if (role === 'bot') {
+                const av = document.createElement('div');
+                av.className = 'tt-msg-avatar';
+                av.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.02 2 11c0 2.65 1.18 5.04 3.08 6.74L4 22l4.51-1.5C9.6 20.83 10.78 21 12 21c5.52 0 10-4.02 10-9S17.52 2 12 2z" fill="currentColor"/></svg>';
+                wrap.appendChild(av);
+            }
+
+            const bubble = document.createElement('div');
+            bubble.className = 'tt-bubble';
+            bubble.innerHTML = content.replace(/\n/g, '<br>');
+            if (!animate) bubble.style.animation = 'none';
+            wrap.appendChild(bubble);
+
+            msgArea.appendChild(wrap);
+            scrollBottom();
+        }
+
+        function renderMapBubble(animate = true) {
+            const wrap = document.createElement('div');
+            wrap.className = 'tt-msg bot';
+            if (!animate) wrap.style.animation = 'none';
+
+            const av = document.createElement('div');
+            av.className = 'tt-msg-avatar';
+            av.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.02 2 11c0 2.65 1.18 5.04 3.08 6.74L4 22l4.51-1.5C9.6 20.83 10.78 21 12 21c5.52 0 10-4.02 10-9S17.52 2 12 2z" fill="currentColor"/></svg>';
+            wrap.appendChild(av);
+
+            const bubble = document.createElement('div');
+            bubble.className = 'tt-bubble';
+            bubble.innerHTML = `<strong>📍 We're here for you:</strong><br>${BOUTIQUE.address}<div class="tt-map-preview"><iframe src="${BOUTIQUE.mapEmbed}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Tailoring Traditions Location"></iframe><a href="${BOUTIQUE.mapsLink}" target="_blank" class="tt-map-cta">↗ Get Directions on Google Maps</a></div>`;
+            wrap.appendChild(bubble);
+
+            msgArea.appendChild(wrap);
+            scrollBottom();
+        }
+
+        function renderTimestamp() {
+            const ts = document.createElement('div');
+            ts.className = 'tt-timestamp';
+            ts.textContent = timeNow();
+            msgArea.appendChild(ts);
+        }
+
+        function showTyping() {
+            const wrap = document.createElement('div');
+            wrap.className = 'tt-typing-bubble';
+            wrap.id = 'ttTypingIndicator';
+
+            const av = document.createElement('div');
+            av.className = 'tt-msg-avatar';
+            av.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.02 2 11c0 2.65 1.18 5.04 3.08 6.74L4 22l4.51-1.5C9.6 20.83 10.78 21 12 21c5.52 0 10-4.02 10-9S17.52 2 12 2z" fill="currentColor"/></svg>';
+            wrap.appendChild(av);
+
+            const dots = document.createElement('div');
+            dots.className = 'tt-typing-dots';
+            dots.innerHTML = '<div class="tt-dot"></div><div class="tt-dot"></div><div class="tt-dot"></div>';
+            wrap.appendChild(dots);
+
+            msgArea.appendChild(wrap);
+            scrollBottom();
+        }
+
+        function removeTyping() {
+            const el = document.getElementById('ttTypingIndicator');
+            if (el) el.remove();
+        }
+
+        function scrollBottom() {
+            setTimeout(() => { msgArea.scrollTop = msgArea.scrollHeight; }, 30);
+        }
+
+        /* ═══ Restore Previous Chat ═══ */
+        function restoreHistory() {
+            history = loadHistory();
+            if (history.length) {
+                history.forEach(h => renderMessage(h.role, h.content, false));
+                renderTimestamp();
+                greeted = true;
+            }
+        }
+
+        /* ═══ Send a message ═══ */
+        function sendMessage(text) {
+            if (!text.trim()) return;
+            input.value = '';
+
+            // User bubble
+            renderMessage('user', text);
+            history.push({ role: 'user', content: text });
+
+            // Typing delay
+            showTyping();
+            const delay = 800 + Math.random() * 700;
+
+            setTimeout(() => {
+                removeTyping();
+                const reply = findResponse(text);
+                renderMessage('bot', reply);
+                renderTimestamp();
+                history.push({ role: 'bot', content: reply === 'map_preview' ? '[Map Preview]' : reply });
+                saveHistory();
+            }, delay);
+        }
+
+        /* ═══ Auto Greet ═══ */
+        function autoGreet() {
+            if (greeted) return;
+            greeted = true;
+            showTyping();
+            setTimeout(() => {
+                removeTyping();
+                const s = getBoutiqueStatus();
+                renderMessage('bot', `Welcome to <strong>Tailoring Traditions</strong> ✨\n\nHow may we help style your next occasion?\n\n<em>${s.label}</em> — we're here for you.`);
+                renderTimestamp();
+                history.push({ role: 'bot', content: 'Greeting' });
+                saveHistory();
+            }, 900);
+        }
+
+        /* ═══ Open / Close ═══ */
+        function openPanel() {
+            isOpen = true;
+            panel.classList.add('open');
+            panel.setAttribute('aria-hidden', 'false');
+            launcher.classList.add('hidden');
+            unreadDot.style.display = 'none';
+            updateStatusBadge();
+
+            if (!greeted) {
+                greetTimeout = setTimeout(autoGreet, 600);
+            } else {
+                scrollBottom();
+            }
+
+            setTimeout(() => input.focus(), 500);
+        }
+
+        function closePanel() {
+            isOpen = false;
+            isMinimized = false;
+            panel.classList.remove('open', 'minimized');
+            panel.setAttribute('aria-hidden', 'true');
+            launcher.classList.remove('hidden');
+        }
+
+        function toggleMinimize() {
+            isMinimized = !isMinimized;
+            panel.classList.toggle('minimized', isMinimized);
+        }
+
+        /* ═══ Quick Reply Actions ═══ */
+        const CHIP_ACTIONS = {
+            appointment: 'I would like to book an appointment',
+            pricing: 'What is the pricing?',
+            location: 'Where is the store located?',
+            whatsapp: 'I want to contact on WhatsApp',
+            bridal: 'I need a bridal consultation',
+            delivery: 'How long does delivery take?'
+        };
+
+        quickReplies.querySelectorAll('.tt-chip').forEach(chip => {
+            chip.addEventListener('click', () => {
+                const action = chip.getAttribute('data-action');
+                const msg = CHIP_ACTIONS[action] || action;
+                if (!isOpen) openPanel();
+                setTimeout(() => sendMessage(msg), 200);
+            });
+        });
+
+        /* ═══ Events ═══ */
+        launcher.addEventListener('click', openPanel);
+        closeBtn.addEventListener('click', closePanel);
+        minBtn.addEventListener('click', toggleMinimize);
+
+        sendBtn.addEventListener('click', () => sendMessage(input.value));
+
+        input.addEventListener('keydown', e => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                sendMessage(input.value);
+            }
+        });
+
+        // Click outside to minimize
+        document.addEventListener('click', e => {
+            if (isOpen && !panel.contains(e.target) && !launcher.contains(e.target)) {
+                // Only on desktop — don't interfere mobile scroll
+                if (window.innerWidth > 480) {
+                    toggleMinimize();
+                }
+            }
+        });
+
+        /* ═══ Auto-greet after 4s if panel not opened ═══ */
+        setTimeout(() => {
+            if (!isOpen && !greeted) {
+                unreadDot.style.display = 'flex';
+            }
+        }, 4000);
+
+        /* ═══ Custom cursor hover fix for chatbot elements ═══ */
+        [launcher, panel].forEach(el => {
+            el.addEventListener('mouseenter', () => document.body.classList.add('hover-interactive'));
+            el.addEventListener('mouseleave', () => document.body.classList.remove('hover-interactive'));
+        });
+
+        /* ═══ Restore on load ═══ */
+        restoreHistory();
+
+        /* ═══ Update status every minute ═══ */
+        setInterval(updateStatusBadge, 60000);
+        updateStatusBadge();
+
+    })();
+    </script>
+
 </body>
 
 </html>
